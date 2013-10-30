@@ -1,4 +1,4 @@
-app.controller("rootC", function (dataChannel,$scope,flashTip,userInfo,$history,$location,$pop,AJAX,$rootScope) {
+app.controller("rootC", function (dataChannel,$scope,flashTip,userInfo,$history,$location,$pop,AJAX,$rootScope,notification) {
 
 //    $rootScope.linkTo=function(str){
 //        $location.url(str);
@@ -57,7 +57,7 @@ app.controller("rootC", function (dataChannel,$scope,flashTip,userInfo,$history,
                     $.mobile.activePage.addClass("panelShadow");
 
                     /*震动*/
-                    //notification.vibrate(500);
+                    notification.vibrate(500);
                 }else{
                     $.mobile.activePage.removeClass("panelShadow");
                 }
