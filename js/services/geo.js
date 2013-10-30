@@ -1,6 +1,6 @@
 app.factory('geo', function ($rootScope,AJAX,$waitDialog,phonegapReady) {
     return {
-        get: phonegapReady(function (onSuccess, onError, options) {
+        get: function (onSuccess, onError, options) {
             navigator.geolocation.getCurrentPosition(function () {
                     var that = this,
                         args = arguments;
@@ -21,7 +21,7 @@ app.factory('geo', function ($rootScope,AJAX,$waitDialog,phonegapReady) {
                     }
                 },
                 options);
-        }),
+        },
         codingAjax:function(p,cb,timeout,completeCb){
             AJAX({
                 url:appConfig.api.url.geocodingURL,
